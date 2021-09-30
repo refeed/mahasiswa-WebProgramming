@@ -1,3 +1,7 @@
+<p>
+    <a href="{{ route('buku.create') }}">Tambah Buku</a>
+</p>
+
 <table>
     <thead>
         <tr>
@@ -18,6 +22,13 @@
         <td>{{ $buku->penulis }}</td>
         <td>{{ "Rp " . number_format($buku->harga, 2, ',', '.') }}</td>
         <td>{{ $buku->tgl_terbit }}</td>
+        <td>
+            <form action="{{ route('buku.destroy', $buku->id) }}" method="post">
+                @csrf
+                <button onclick="return confirm('Yakin mau dihapus?')">Hapus</button>
+            </form>
+            <a href="{{ route('buku.update', $buku->id) }}">Update</a>
+        </td>
     </tr>
     @endforeach
 </table>
