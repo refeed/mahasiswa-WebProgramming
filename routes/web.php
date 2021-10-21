@@ -19,9 +19,10 @@ Route::get('/', function () {
 
 Route::resource('/mahasiswa', 'MahasiswaController');
 
-Route::get('/buku', 'BukuController@index');
+Route::get('/buku', 'BukuController@index')->name('buku.index');
 Route::get('/buku/create', 'BukuController@create')->name('buku.create');
 Route::post('/buku', 'BukuController@store')->name('buku.store');
 Route::post('/buku/delete/{id}', 'BukuController@destroy')->name('buku.destroy');
 Route::get('/buku/update/{id}', 'BukuController@update')->name('buku.update');
 Route::post('/buku/update/{id}', 'BukuController@storeUpdate')->name('buku.storeUpdate');
+Route::get('/buku/search', 'BukuController@search')->name('buku.search');

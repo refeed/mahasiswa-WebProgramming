@@ -5,15 +5,17 @@
     <a href="{{ route('buku.create') }}">Tambah Buku</a>
 </p>
 
-@if(Session::has('pesan'))
-    <div class="alert alert-success">{{Session::get('pesan')}}</div>
+@if(count($data_buku))
+    <div class="alert alert-success">
+        Ditemukan <b>{{ count($data_buku) }}</b> buku dengan kueri <b>{{ $kueri }}</b>
+    </div>
+@else
+    <div class="alert alert-warning">
+        Data buku dengan kueri <b>{{ $kueri }}</b> tidak ditemukan
+        <br>
+        <a href="{{ route('buku.index') }}" class="btn btn-warning">Kembali</a>
+    </div>
 @endif
-
-<form action="{{ route('buku.search') }}" method="get">
-    @csrf
-    <input type="text" name="kueri" class="form-control" placeholder="Cari..."
-     style="width:30%; display:inline; margin:10px 10px; float:right">
-</form>
 
 <table class="table">
     <thead>
@@ -50,6 +52,4 @@
 <br>
 Jumlah buku: {{ $jumlah_buku }}
 <br>
-Jumlah harga: {{ "Rp " . number_format($jumlah_harga, 2, ',', '.') }}
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
