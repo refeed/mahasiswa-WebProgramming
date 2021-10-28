@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes([
+    'register' => false,
+    'reset' => false
+]);
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -26,3 +31,5 @@ Route::post('/buku/delete/{id}', 'BukuController@destroy')->name('buku.destroy')
 Route::get('/buku/update/{id}', 'BukuController@update')->name('buku.update');
 Route::post('/buku/update/{id}', 'BukuController@storeUpdate')->name('buku.storeUpdate');
 Route::get('/buku/search', 'BukuController@search')->name('buku.search');
+
+Route::get('/home', 'HomeController@index')->name('home');
