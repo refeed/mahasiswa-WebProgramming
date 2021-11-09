@@ -33,3 +33,10 @@ Route::post('/buku/update/{id}', 'BukuController@storeUpdate')->name('buku.store
 Route::get('/buku/search', 'BukuController@search')->name('buku.search');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin', 'AdminController@index')->name('admin.index');
+Route::get('/admin/create', 'AdminController@create')->name('admin.create');
+Route::post('/admin/create', 'AdminController@store')->name('admin.store');
+Route::get('/admin/update/{id}', 'AdminController@update')->name('admin.update');
+Route::post('/admin/update/{id}', 'AdminController@storeUpdate')->name('admin.storeUpdate');
+Route::get('/admin/delete/{id}', 'AdminController@destroy')->name('admin.destroy');

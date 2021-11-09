@@ -17,6 +17,12 @@
     <input type="text" name="kueri" class="form-control" placeholder="Cari..." style="width:30%; display:inline; margin:10px 10px; float:right">
 </form>
 
+@if(Auth::check() && Auth::user()->level == 'admin')
+<h1>You are admin</h1>
+@else
+<h1>You are user</h1>
+@endif
+
 <table class="table">
     <thead>
         <tr>

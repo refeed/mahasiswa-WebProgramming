@@ -7,6 +7,11 @@ use App\Buku;
 
 class BukuController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index() {
         $batas = 5;
         $data_buku = Buku::orderBy('id', 'desc')->paginate($batas);

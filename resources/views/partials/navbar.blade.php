@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Buku</a>
@@ -8,8 +7,13 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ url('/buku') }}">Home</a>
+                    <a class="nav-link" aria-current="page" href="{{ url('/buku') }}">Home</a>
                 </li>
+                @if (Auth::user()->level == 'admin')
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{ url('/admin') }}">Admin</a>
+                </li>
+                @endif
             </ul>
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
