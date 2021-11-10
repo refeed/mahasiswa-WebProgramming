@@ -1,7 +1,7 @@
 @extends('layouts.buku_base')
 
 @section('content')
-<h4>Update Buku</h4>
+<h4>Update user</h4>
 <form action="{{ route('admin.storeUpdate', $id) }}" method="post">
     @csrf
     <div class="form-group row mb-2">
