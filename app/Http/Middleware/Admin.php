@@ -16,8 +16,8 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if (!FacadesAuth::user()->level == 'admin') {
-            return redirect()->back();
+        if (!FacadesAuth::user() || !FacadesAuth::user()->level == 'admin') {
+            return redirect()->route('login');
         }
         return $next($request);
     }

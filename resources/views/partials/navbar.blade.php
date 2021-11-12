@@ -13,6 +13,9 @@
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{ url('/admin') }}">Admin</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{ route('galeri.index') }}">Galeri</a>
+                </li>
                 @endif
             </ul>
             <ul class="navbar-nav ml-auto">

@@ -40,3 +40,10 @@ Route::post('/admin/create', 'AdminController@store')->name('admin.store');
 Route::get('/admin/update/{id}', 'AdminController@update')->name('admin.update');
 Route::post('/admin/update/{id}', 'AdminController@storeUpdate')->name('admin.storeUpdate');
 Route::get('/admin/delete/{id}', 'AdminController@destroy')->name('admin.destroy');
+
+Route::get('/galeri', 'GaleriController@index')->name('galeri.index');
+Route::post('/galeri', 'GaleriController@store')->name('galeri.store');
+Route::get('/galeri/create', 'GaleriController@create')->name('galeri.create');
+Route::get('/galeri/edit/{id}', 'GaleriController@edit')->name('galeri.edit');
+Route::post('/galeri/update/{id}', 'GaleriController@update')->name('galeri.update');
+Route::post('/galeri/delete/{id}', 'GaleriController@destroy')->name('galeri.destroy');
