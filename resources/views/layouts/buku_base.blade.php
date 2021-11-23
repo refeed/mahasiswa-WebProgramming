@@ -35,6 +35,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/navbar-top.css') }}" rel="stylesheet">
+    @yield('css')
 </head>
 
 <body>

@@ -9,6 +9,9 @@
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{ url('/buku') }}">Home</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{ url('/list-buku') }}">List buku</a>
+                </li>
                 @if (Auth::user()  && Auth::user()->level == 'admin')
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{ url('/admin') }}">Admin</a>

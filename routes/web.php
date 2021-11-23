@@ -47,3 +47,6 @@ Route::get('/galeri/create', 'GaleriController@create')->name('galeri.create');
 Route::get('/galeri/edit/{id}', 'GaleriController@edit')->name('galeri.edit');
 Route::post('/galeri/update/{id}', 'GaleriController@update')->name('galeri.update');
 Route::post('/galeri/delete/{id}', 'GaleriController@destroy')->name('galeri.destroy');
+
+Route::get('/detail-buku/{title}', 'BukuController@galbuku')->name('galeri.buku');
+Route::get('/list-buku', 'BukuController@listBuku')->name('galeri.listbuku');

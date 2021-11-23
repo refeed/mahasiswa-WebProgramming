@@ -85,4 +85,14 @@ class BukuController extends Controller
         return view('buku.search', compact('data_buku', 'no', 'jumlah_buku', 'kueri'));
     }
 
+    public function galbuku($title) {
+        $bukus = Buku::where('judul', $title)->first();
+        $galeris = $bukus->photos()->orderBy('id', 'desc')->paginate(6);
+        return view('buku.galeri', compact('bukus', 'galeris'));
+    }
+
+    public function listBuku() {
+        $bukus = Buku::all();
+        return view('buku.listBukuGaleri', compact('bukus'));
+    }
 }
