@@ -13,9 +13,12 @@
             @foreach ($bukus as $data)
                 <div class="col-md-4">
                     {{-- FIXME: Akan error ketika ada buku yang tidak memiliki galeri --}}
-                    <a href="{{ asset('thumb/' . $data->photos()->first()->foto) }}" data-lightbox="image-1" data-title="{{ $data->keterangan }}">
-                        <img src="{{ asset('thumb/' . $data->photos()->first()->foto) }}" style="width: 200px; height:150px">
-                    </a>
+                    <div>
+                        <a href="{{ asset('thumb/' . $data->photos()->first()->foto) }}" data-lightbox="image-1" data-title="{{ $data->keterangan }}">
+                            <img src="{{ asset('thumb/' . $data->photos()->first()->foto) }}" style="width: 200px; height:150px">
+                        </a>
+                    </div>
+                    <a href="{{ route('buku.like', $data->id) }}" class="btn btn-primary btn-sm">Suka (<span>{{ $data->suka }}</span>)</a>
                     <p><h5><a href="{{ route('galeri.buku',$data->judul) }}">{{ $data->judul }}</a></h5></p>
                 </div>
             @endforeach

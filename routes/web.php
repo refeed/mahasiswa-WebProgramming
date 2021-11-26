@@ -30,6 +30,7 @@ Route::post('/buku', 'BukuController@store')->name('buku.store');
 Route::post('/buku/delete/{id}', 'BukuController@destroy')->name('buku.destroy');
 Route::get('/buku/update/{id}', 'BukuController@update')->name('buku.update');
 Route::post('/buku/update/{id}', 'BukuController@storeUpdate')->name('buku.storeUpdate');
+Route::get('/buku/like/{id}', 'BukuController@likeBuku')->name('buku.like');
 Route::get('/buku/search', 'BukuController@search')->name('buku.search');
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -50,3 +51,5 @@ Route::post('/galeri/delete/{id}', 'GaleriController@destroy')->name('galeri.des
 
 Route::get('/detail-buku/{title}', 'BukuController@galbuku')->name('galeri.buku');
 Route::get('/list-buku', 'BukuController@listBuku')->name('galeri.listbuku');
+
+Route::post('/komentar', 'KomentarController@store')->name('komentar.store');
